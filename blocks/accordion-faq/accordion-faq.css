@@ -1,0 +1,72 @@
+/* Block: accordion-faq -- FAQ accordion of expandable question/answer cards */
+
+.accordion-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* accordion item card */
+.accordion-faq .accordion-faq-item {
+  border: 1px solid rgb(232 232 232);
+  border-radius: 16px;
+  background-color: var(--background-color);
+}
+
+/* question row */
+.accordion-faq .accordion-faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 32px;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text-color);
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion-faq .accordion-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* EDS wraps summary/body text in <p> -- reset default margins */
+.accordion-faq .accordion-faq-item summary p {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+/* plus / close icon drawn as two bars, rotates to an X when open */
+.accordion-faq .accordion-faq-item summary::after {
+  content: '';
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  background:
+    linear-gradient(currentcolor, currentcolor) center / 2px 100% no-repeat,
+    linear-gradient(currentcolor, currentcolor) center / 100% 2px no-repeat;
+  transition: transform 0.2s ease;
+}
+
+.accordion-faq .accordion-faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+/* answer body */
+.accordion-faq .accordion-faq-item .accordion-faq-item-body {
+  padding: 0 32px 32px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgb(64 64 64);
+}
+
+.accordion-faq .accordion-faq-item .accordion-faq-item-body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgb(64 64 64);
+}

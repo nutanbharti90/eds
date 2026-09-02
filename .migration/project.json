@@ -1,9 +1,11 @@
 {
+  "type": "da",
   "sites": {
     "eds": {
       "previewOrg": "nutanbharti90",
       "previewSite": "eds",
-      "contentHostUrl": "https://content.da.live/nutanbharti90/eds/"
+      "contentHostUrl": "https://content.da.live/nutanbharti90/eds/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
     }
   }
 }

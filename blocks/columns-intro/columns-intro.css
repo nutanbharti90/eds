@@ -1,0 +1,122 @@
+/* columns-intro — hero/intro: text column + stacked image grid */
+
+/* Values extracted from source computed styles (see migration-work/columns-intro-extracted.css) */
+
+/* Extra vertical breathing room on top of the .section.secondary 80px padding
+   to approach the source hero (128px total). */
+.columns-intro {
+  padding: 48px 0;
+}
+
+/* Row: mobile-first single column */
+.columns-intro > div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Heading */
+.columns-intro h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+}
+
+/* Image column — 2-up grid (2 top, 1 bottom-left).
+   Ordered before the more specific p rules to satisfy no-descending-specificity. */
+.columns-intro-img-col > p {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+}
+
+.columns-intro-img-col picture {
+  display: block;
+  line-height: 0;
+}
+
+.columns-intro img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* CTA button group — two plain links inside a single <p> */
+.columns-intro p:has(a) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0 0;
+}
+
+.columns-intro p:has(a) a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px 24px;
+  border: 2px solid var(--text-color);
+  border-radius: 9999px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: none;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Primary CTA ("See case") — solid dark */
+.columns-intro p:has(a) a:first-child {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.columns-intro p:has(a) a:hover,
+.columns-intro p:has(a) a:focus-visible {
+  text-decoration: none;
+}
+
+.columns-intro p:has(a) a:first-child:hover,
+.columns-intro p:has(a) a:first-child:focus-visible {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+  color: var(--background-color);
+}
+
+.columns-intro p:has(a) a:last-child:hover,
+.columns-intro p:has(a) a:last-child:focus-visible {
+  background-color: var(--light-color);
+  color: var(--text-color);
+}
+
+/* Subheading paragraph (first paragraph of the text cell) */
+.columns-intro > div > div:first-child > p:first-of-type {
+  margin: 24px 0 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Desktop: two-column layout, vertically centered */
+@media (width >= 900px) {
+  .columns-intro > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .columns-intro h1 {
+    font-size: 56px;
+    letter-spacing: -1.12px;
+  }
+}

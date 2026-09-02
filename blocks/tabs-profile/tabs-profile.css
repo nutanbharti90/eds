@@ -1,0 +1,135 @@
+/* Block: tabs-profile -- testimonial tabs. Values from source computed styles. */
+
+.tabs-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+/* panel appears ABOVE the tab menu (source order) */
+.tabs-profile .tabs-profile-panel {
+  order: 1;
+}
+
+.tabs-profile .tabs-profile-panel[aria-hidden='true'] {
+  display: none;
+}
+
+/* Tab menu (order 2 = below the active panel) */
+.tabs-profile .tabs-profile-list {
+  order: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 0;
+}
+
+/* shared bold treatment for names */
+.tabs-profile strong {
+  font-weight: 700;
+}
+
+/* --- Active panel: image column + text column --- */
+.tabs-profile .tabs-profile-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.tabs-profile .tabs-profile-body img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* generic paragraph reset inside the text column (kept before more specific rules) */
+.tabs-profile .tabs-profile-text p {
+  margin: 0;
+  color: var(--text-color);
+}
+
+.tabs-profile .tabs-profile-body > picture,
+.tabs-profile .tabs-profile-body > p:first-child {
+  margin: 0;
+}
+
+/* name */
+.tabs-profile .tabs-profile-text p:nth-child(1) {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+/* role */
+.tabs-profile .tabs-profile-text p:nth-child(2) {
+  margin-bottom: 32px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.6px;
+}
+
+/* quote */
+.tabs-profile .tabs-profile-text p:nth-child(3) {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+/* --- Tab menu items --- */
+.tabs-profile .tabs-profile-tab {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  column-gap: 8px;
+  align-items: center;
+  margin: 0;
+  border: 1px solid rgb(232 232 232);
+  border-radius: 16px;
+  padding: 16px;
+  background-color: rgb(239 239 239);
+  color: var(--text-color);
+  text-align: left;
+  cursor: pointer;
+}
+
+.tabs-profile .tabs-profile-tab[aria-selected='true'] {
+  border-color: var(--text-color);
+  background-color: var(--light-color);
+}
+
+.tabs-profile .tabs-profile-tab img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
+/* avatar */
+.tabs-profile .tabs-profile-tab p:first-child {
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+/* name + role inside tab */
+.tabs-profile .tabs-profile-tab p:not(:first-child) {
+  margin: 0;
+  font-size: 14px;
+  line-height: 22.4px;
+}
+
+@media (width >= 600px) {
+  .tabs-profile .tabs-profile-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width >= 900px) {
+  .tabs-profile .tabs-profile-body {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tabs-profile .tabs-profile-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

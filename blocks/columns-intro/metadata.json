@@ -1,0 +1,37 @@
+{
+  "variantName": "columns-intro",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-09-02T08:52:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site/",
+    "originPage": "home page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "spacious",
+    "purpose": "intro",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + subheading + 2 CTAs | image group",
+    "buttonCount": 2,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "page intro splits with text and an image group",
+      "landing hero-style two-column intros on grey background"
+    ],
+    "notSuitableFor": [
+      "image + article-metadata splits (use columns-article)",
+      "full-bleed background hero banners (use hero-overlay)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-02T08:52:00.000Z"
+  }
+}
